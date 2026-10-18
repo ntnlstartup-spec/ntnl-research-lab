@@ -17,10 +17,10 @@
 </style>
 </head>
 <body>
-<header class="top"><div class="top-inner"><div class="logo"><div class="brandmark">LTF</div><div><div class="logo-main">LTF Market</div><div class="logo-sub">Nova fase V1.6 • Pesquisa matemática</div></div></div><nav class="nav" aria-label="Navegação"><button data-tab="rodada" class="active">RODADA</button><button data-tab="historico">HISTÓRICO</button><button data-tab="dados">DADOS / BACKUP</button></nav><div class="indicator"><span id="topMode" class="pill warn">DEMONSTRAÇÃO</span><span class="pill">T30.72 • 11 JOGOS</span></div></div></header>
+<header class="top"><div class="top-inner"><div class="logo"><div class="brandmark">LTF</div><div><div class="logo-main">LTF Market</div><div class="logo-sub">Nova fase V1.9 • Eficiência + Evolução</div></div></div><nav class="nav" aria-label="Navegação"><button data-tab="rodada" class="active">RODADA</button><button data-tab="historico">HISTÓRICO</button><button data-tab="dados">DADOS / BACKUP</button></nav><div class="indicator"><span id="topMode" class="pill warn">DEMONSTRAÇÃO</span><span class="pill">⚡ ADAPTATIVO + 🧬 EVOLUÇÃO</span></div></div></header>
 <div class="shell">
-<section class="hero"><div><div class="eyebrow">LTF MARKET / NOVA FASE</div><h1>Uma rodada. Todos os sistemas.</h1><p>Nove referências matemáticas, até onze jogos por sistema, conferência única e comparação direta. Design inspirado no LTF Market que você aprovou.</p></div><div class="heroright"><b>🔬 Pesquisa auditável</b>Nenhuma aposta real<br>Sem conexão com a V10.3 antiga</div></section>
-<section class="kpis" aria-label="Indicadores"><div class="kpi"><div class="lbl">Concurso</div><div id="kContest" class="val">—</div><div class="sm">Concurso virtual</div></div><div class="kpi"><div class="lbl">Sistemas</div><div id="kRobots" class="val">9</div><div class="sm">Na mesma rodada</div></div><div class="kpi"><div class="lbl">Jogos gerados</div><div id="kGames" class="val">0</div><div class="sm">Até 99 por rodada</div></div><div class="kpi"><div class="lbl">Custo simulado</div><div id="kSpent" class="val">R$ 0,00</div><div class="sm">Nenhuma compra real</div></div><div class="kpi"><div class="lbl">Premiações</div><div id="kPrizes" class="val">—</div><div class="sm">Jogos com 11+ acertos</div></div></section>
+<section class="hero"><div><div class="eyebrow">LTF MARKET / NOVA FASE</div><h1>Uma rodada. Todos os sistemas.</h1><p>Nove sistemas, jogos adaptativos e evolução matemática experimental por ciclos. Um resultado confere todos.</p></div><div class="heroright"><b>🔬 Pesquisa auditável</b>Nenhuma aposta real<br>Sem conexão com a V10.3 antiga</div></section>
+<section class="kpis" aria-label="Indicadores"><div class="kpi"><div class="lbl">Concurso</div><div id="kContest" class="val">—</div><div class="sm">Concurso virtual</div></div><div class="kpi"><div class="lbl">Sistemas</div><div id="kRobots" class="val">9</div><div class="sm">Na mesma rodada</div></div><div class="kpi"><div class="lbl">Jogos gerados</div><div id="kGames" class="val">0</div><div class="sm">Quantidade ajustada por robô</div></div><div class="kpi"><div class="lbl">Custo simulado</div><div id="kSpent" class="val">R$ 0,00</div><div class="sm">Nenhuma compra real</div></div><div class="kpi"><div class="lbl">Premiações</div><div id="kPrizes" class="val">—</div><div class="sm">Jogos com 11+ acertos</div></div></section>
 <main>
 <section id="tab-rodada" class="tabpage active"><div class="layout"><div class="left">
 <div class="panel elevated"><div class="section-head"><div><h2>🎮 Rodada principal</h2><p>Próxima Rodada → Ativar Sistemas → Conferência automática no simulador</p></div><span class="pill" id="phasePill">AGUARDANDO</span></div>
@@ -31,11 +31,11 @@
 <div id="mainMessage" class="notice" role="status" aria-live="polite">Abra a próxima rodada. Todos os nove sistemas aparecerão automaticamente.</div>
 </div>
 <div class="panel" id="systemsPanel"><div class="section-head"><div><h2>🤖 Sistemas matemáticos</h2><p>Todos aparecem juntos. Nenhuma seleção individual.</p></div><span class="pill">9 REFERÊNCIAS</span></div><div class="robot-grid" id="robotGrid"></div></div>
-<div class="panel hidden" id="ticketsPanel"><div class="section-head"><div><h2>📋 Carteiras congeladas</h2><p id="freezeInfo">11 jogos por sistema • matriz T30.72</p></div><span class="pill" id="gamesPill">—</span></div><div class="notice green">As carteiras foram congeladas antes da conferência. Depois disso, não é possível substituir jogos nesta rodada.</div><div id="ticketList"></div></div>
+<div class="panel hidden" id="ticketsPanel"><div class="section-head"><div><h2>📋 Carteiras congeladas</h2><p id="freezeInfo">⚡ 6 a 88 jogos por sistema • ajuste automático por ciclo</p></div><span class="pill" id="gamesPill">—</span></div><div class="notice green">As carteiras foram congeladas antes da conferência. Depois disso, não é possível substituir jogos nesta rodada.</div><div id="ticketList"></div></div>
 <div class="panel hidden" id="resultPanel"><div class="section-head"><div><h2>🏁 Conferir resultado</h2><p>Um resultado corrige todos os sistemas de uma só vez.</p></div><span class="pill">CONFERÊNCIA ÚNICA</span></div><div class="field"><label for="resultInput">Informe exatamente as 15 dezenas sorteadas</label><input type="text" id="resultInput" placeholder="01 02 03 04 05 06 07 08 09 10 11 12 13 14 15" autocomplete="off" /></div><div class="spaced" style="margin-top:12px"><span class="tiny muted">Premiação virtual por jogo de:</span><label class="tiny muted">11 <input id="pay11" style="width:69px" type="number" min="0" step="0.01" value="7"></label><label class="tiny muted">12 <input id="pay12" style="width:69px" type="number" min="0" step="0.01" value="14"></label><label class="tiny muted">13 <input id="pay13" style="width:69px" type="number" min="0" step="0.01" value="35"></label><label class="tiny muted">14 <input id="pay14" style="width:90px" type="number" min="0" step="0.01" placeholder="Rateio"></label><label class="tiny muted">15 <input id="pay15" style="width:90px" type="number" min="0" step="0.01" placeholder="Rateio"></label></div><div class="tiny muted" style="margin-top:8px">Valores 11–13 são apenas exemplos editáveis. Se houver 14 ou 15 acertos, informe o respectivo rateio para calcular o ROI.</div><div class="actions"><button id="revealBtn" class="btn success">✓ CONFERIR TODOS OS SISTEMAS</button></div><div id="resultError" class="notice error hidden" role="alert"></div></div>
 <div class="panel hidden" id="analysisPanel"><div class="section-head"><div><h2>📊 Análise básica da rodada</h2><p>Resultado conjunto, desempenho por sistema e comparação com controles.</p></div><span class="pill good">RESULTADO REGISTRADO</span></div><div id="analysisBody"></div><div class="actions"><button id="reportBtn" class="btn primary" disabled>⬇ BAIXAR RELATÓRIO COMPLETO</button></div><div id="reportStatus" class="notice hidden" role="status" aria-live="polite"></div><p class="tiny muted">Relatório JSON de todas as rodadas concluídas: jogos, acertos, prêmios, ROI, controles e integridade. Liberado após a conferência.</p></div>
 </div>
-<aside class="right"><div class="panel"><h3 class="s-title">📍 Fluxo simples</h3><div class="diagram"><b>01.</b> Preparar próxima rodada<br><b>02.</b> Ativar todos juntos<br><b>03.</b> Congelar carteiras<br><b>04.</b> Simular sorteio e corrigir (ou informar resultado em Tempo Real)<br><b>05.</b> Ver premiação e histórico</div><p>Nenhuma camada adicional de pesquisa no HTML. Apenas o processo da rodada.</p></div><div class="panel"><h3 class="s-title">🧮 Matriz T30.72</h3><p>Onze combinações de 15 posições, mapeadas sobre 25 dezenas ordenadas por cada sistema.</p><div class="grid-info" style="grid-template-columns:repeat(2,1fr)"><div class="data"><div class="l">Jogos</div><div class="v">11</div></div><div class="data"><div class="l">Interseção</div><div class="v">8–9</div></div></div><p class="tiny">A matriz foi recuperada do Registro Mestre Lotofácil; ela otimiza cobertura estrutural de 13+, não a previsão do sorteio.</p></div><div class="panel"><h3 class="s-title">🔒 Segurança dos registros</h3><div class="meta" id="safetyInfo">• Rodadas salvas apenas neste navegador<br>• Backup JSON manual<br>• Relatório científico completo em JSON<br>• Bloqueio de resultado duplicado<br>• Sem alterações no HTML antigo<br>• Sem apostas com dinheiro real</div><div class="progress"><div id="progressFill"></div></div><p id="progressText">Rodada não iniciada.</p></div><div class="panel"><h3 class="s-title">⚠️ Honestidade científica</h3><p id="integrityNotice">A prévia usa combinações demonstrativas. Para medir os robôs MAX, RMRR1, C3 e os demais de verdade, é necessário integrar os algoritmos originais ou importar os jogos/rankings congelados antes da revelação.</p></div></aside>
+<aside class="right"><div class="panel"><h3 class="s-title">📍 Fluxo simples</h3><div class="diagram"><b>01.</b> Preparar próxima rodada<br><b>02.</b> Ativar todos juntos<br><b>03.</b> Congelar carteiras<br><b>04.</b> Simular sorteio e corrigir (ou informar resultado em Tempo Real)<br><b>05.</b> Ver premiação e histórico</div><p>⚡ Quantidade de jogos adaptativa e 🧬 pesquisa de equações funcionam automaticamente, sem etapas extras.</p></div><div class="panel"><h3 class="s-title">🧮 Matriz T30.72</h3><p>Onze combinações-base de 15 dezenas; a quantidade experimental pode variar de 6 a 88 por sistema.</p><div class="grid-info" style="grid-template-columns:repeat(2,1fr)"><div class="data"><div class="l">Base</div><div class="v">11</div></div><div class="data"><div class="l">Interseção</div><div class="v">8–9</div></div></div><p class="tiny">A matriz foi recuperada do Registro Mestre Lotofácil; ela otimiza cobertura estrutural de 13+, não a previsão do sorteio.</p></div><div class="panel"><h3 class="s-title">🔒 Segurança dos registros</h3><div class="meta" id="safetyInfo">• Rodadas salvas apenas neste navegador<br>• Backup JSON manual<br>• Relatório científico completo em JSON<br>• Bloqueio de resultado duplicado<br>• Sem alterações no HTML antigo<br>• Sem apostas com dinheiro real</div><div class="progress"><div id="progressFill"></div></div><p id="progressText">Rodada não iniciada.</p></div><div class="panel"><h3 class="s-title">⚠️ Honestidade científica</h3><p id="integrityNotice">A prévia usa combinações demonstrativas. Para medir os robôs MAX, RMRR1, C3 e os demais de verdade, é necessário integrar os algoritmos originais ou importar os jogos/rankings congelados antes da revelação.</p></div></aside>
 </div></section>
 <section id="tab-historico" class="tabpage"><div class="panel"><div class="section-head"><div><h2>📚 Histórico das rodadas</h2><p>Avaliações persistidas neste navegador, sem afetar o LTF Market antigo.</p></div><div class="actions" style="margin:0;align-items:center"><span class="pill" id="historyCount">0 RODADAS</span><button id="historyReportBtn" class="btn ghost small-btn" disabled>⬇ RELATÓRIO COMPLETO</button></div></div><div id="historyList"></div><div id="historyReportStatus" class="notice hidden" role="status" aria-live="polite"></div></div></section>
 <section id="tab-dados" class="tabpage"><div class="twocol"><div class="panel"><div class="section-head"><div><h2>⚙️ Dados da rodada</h2><p>Importação de rankings/jogos previamente calculados.</p></div><span class="pill">FONTE EXTERNA</span></div><p class="help">No modo <strong>demonstrativo</strong>, o MAX11.008 usa o ranking histórico original (K1) para criar 11 jogos T30.72 experimentais; os outros oito continuam ilustrativos. O sorteio virtual não valida poder preditivo. No modo <strong>importado</strong>, cada sistema recebe uma ordem real das 25 dezenas ou uma carteira de 11 jogos de fonte externa.</p><div class="radio-wrap" style="margin:15px 0"><label><input name="sourceMode" type="radio" value="demo" checked /> Demonstração</label><label><input name="sourceMode" type="radio" value="imported" /> Dados importados</label></div><div class="field"><label for="importText">Cole o JSON dos sistemas (antes da revelação)</label><textarea id="importText" spellcheck="false" placeholder='{"contest":1022,"systems":{"MAX11.008":{"ranking":[1,2,3,...,25]},"RMRR1":{"games":[[1,...,15],...]},"BOTTLENECK_DOMINANT40":{"abstain":true}}}'></textarea></div><div class="actions"><button id="validateImportBtn" class="btn">VERIFICAR E CARREGAR</button><button id="templateBtn" class="btn ghost">BAIXAR MODELO DE IMPORTAÇÃO</button></div><div id="importStatus" class="notice">Nenhum pacote importado. As versões matemáticas históricas não são reconstruídas automaticamente.</div><hr class="divider"/><details><summary>Formato aceito e critérios de integridade</summary><p>É obrigatório informar <code>contest</code> e o objeto <code>systems</code>. Para cada sistema: <code>ranking</code> contendo as 25 dezenas distintas, ou <code>games</code> com 11 jogos distintos de 15 dezenas, ou <code>abstain:true</code> (sem aposta). Ranking usa a matriz T30.72. O software valida estrutura, não autentica a autoria da matemática importada. Pacotes só podem ser carregados antes do congelamento.</p></details></div><div class="panel"><div class="section-head"><div><h2>💾 Backup e recuperação</h2><p>Arquivo pequeno, sem depender de internet.</p></div></div><div class="actions"><button id="exportBtn" class="btn primary">⬇ EXPORTAR BACKUP JSON</button><label class="btn ghost" style="display:inline-block">⬆ IMPORTAR BACKUP <input id="backupInput" type="file" accept="application/json,.json" hidden></label></div><div id="backupStatus" class="notice">Faça backup depois de cada rodada concluída. Dados locais podem ser perdidos ao limpar o navegador.</div><hr class="divider"/><p class="help"><strong>Importante:</strong> este HTML não lê automaticamente o IndexedDB do LTF Market V10.3. Ele usa seu próprio espaço de armazenamento para evitar conflitos e alterações acidentais nos registros anteriores.</p><div class="notice amber">O custo padrão de R$ 3,50 por aposta e as premiações ilustrativas podem não corresponder à tabela oficial vigente. O sistema é destinado apenas à simulação e à comparação de carteiras.</div></div></div><div class="panel" id="maxAuditPanel" style="margin-top:18px">
@@ -119,6 +119,160 @@ function prng(seed){let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(
 function demoRank(contest,id){const rng=prng(fHash(`LTF_VISUAL_DEMO|${contest}|${id}|V1`));let n=Array.from({length:25},(_,i)=>i+1);for(let i=24;i>0;i--){const j=Math.floor(rng()*(i+1));[n[i],n[j]]=[n[j],n[i]]}return n}
 const mapping=rank=>MATRIX.map(row=>row.map(pos=>rank[pos-1]).sort((a,b)=>a-b));
 const randomControl=(contest,id)=>mapping(demoRank(contest,`CONTROLE:${id}`));
+// ⚡ EFICIÊNCIA ADAPTATIVA — simulações virtuais congeladas antes do sorteio.
+// Primeiro ciclo = 11 jogos. Após cada 5 rodadas NOVAS com 5 cenários pré-congelados,
+// cada robô escolhe automaticamente 6,11,22,44 ou 88 para o PRÓXIMO ciclo.
+// Não muda o K1/K0 original e nunca tenta prever 15 acertos por bilhete.
+const ADAPT_SIZES=[6,11,22,44,88], ADAPT_CYCLE=5, ADAPT_VERSION='EA_V1_8';
+const boolMask=g=>g.reduce((mask,n)=>mask|(1<<(n-1)),0);
+function neighbors14(g){
+ const mask=boolMask(g), inside=new Set(g), a=[mask];
+ for(const n of g){const m=mask^(1<<(n-1));for(let k=1;k<=25;k++)if(!inside.has(k))a.push(m|(1<<(k-1)));}
+ return a; // 151 resultados que dão 14 ou 15 acertos neste bilhete
+}
+function adaptivePool(rank,contest,id){
+ // Os primeiros 11 jogos preservam EXATAMENTE a matriz T30.72 canônica.
+ const pool=mapping(rank), selected=new Set(pool.map(canonical)), covered=new Set();
+ for(const g of pool)for(const v of neighbors14(g))covered.add(v);
+ const counts={6:null,11:covered.size},rng=prng(fHash(`LTF_ADAPT_V1|${contest}|${id}`));
+ let firstSix=new Set();for(const g of pool.slice(0,6))for(const v of neighbors14(g))firstSix.add(v);counts[6]=firstSix.size;
+ while(pool.length<88){
+  let best=null,bestGain=-1,bestKey='';
+  for(let trial=0;trial<18;trial++){
+   const v=rank.map((n,i)=>({n,score:rng()+.28*(25-i)/25}));
+   v.sort((a,b)=>b.score-a.score||a.n-b.n);
+   const cand=v.slice(0,15).map(z=>z.n).sort((a,b)=>a-b), key=canonical(cand);
+   if(selected.has(key))continue;
+   let gain=0;for(const r of neighbors14(cand))if(!covered.has(r))gain++;
+   if(gain>bestGain||(gain===bestGain&&key<bestKey)){best=cand;bestGain=gain;bestKey=key;}
+  }
+  if(!best)throw Error(`${id}: não foi possível ampliar a carteira adaptativa.`);
+  selected.add(bestKey);pool.push(best);for(const v of neighbors14(best))covered.add(v);
+  if(ADAPT_SIZES.includes(pool.length))counts[pool.length]=covered.size;
+ }
+ return {pool,counts};
+}
+function adaptiveFitness(size,rows){
+ const vals=rows.map(r=>r[size]).filter(Boolean);
+ if(!vals.length)return null;
+ const spent=vals.reduce((a,v)=>a+v.spent,0), ctrlSpent=vals.reduce((a,v)=>a+v.controlSpent,0);
+ if(!spent||!ctrlSpent||vals.some(v=>v.won===null||v.controlWon===null))return null;
+ const roi=vals.reduce((a,v)=>a+v.won,0)/spent-1;
+ const ctrlRoi=vals.reduce((a,v)=>a+v.controlWon,0)/ctrlSpent-1;
+ const efficiency=vals.reduce((a,v)=>a+v.cover14/(151*size),0)/vals.length;
+ // Indicador interno 0..100; não expressa probabilidade de prêmio ou de lucro.
+ const outcomeEffect=Math.min(1,Math.max(0,(roi-ctrlRoi+1)/2));
+ const coverWeight=vals.reduce((a,v)=>a+v.cover14,0)/(vals.length*151*88);
+ const score=100*(.50*efficiency+.42*outcomeEffect+.08*coverWeight-.04*size/88);
+ return {score,roi,ctrlRoi,efficiency,cover14:vals.reduce((a,v)=>a+v.cover14,0)/vals.length,rounds:vals.length};
+}
+function adaptiveChoice(id,roundMode){
+ const rows=store.history.filter(r=>r.resultSource===(roundMode==='simulator'?'virtual':'manual')&&r.adaptiveResults?.[id]).sort((a,b)=>a.contest-b.contest);
+ const completedCycles=Math.floor(rows.length/ADAPT_CYCLE);
+ if(!completedCycles)return {size:11,score:null,cycle:0,rounds:rows.length,reason:'Aguardando primeiro ciclo (5 rodadas novas)'};
+ const window=rows.slice((completedCycles-1)*ADAPT_CYCLE,completedCycles*ADAPT_CYCLE).map(r=>r.adaptiveResults[id]);
+ const options=ADAPT_SIZES.map(size=>({size,data:adaptiveFitness(size,window)})).filter(z=>z.data);
+ if(!options.length)return {size:11,score:null,cycle:completedCycles,rounds:rows.length,reason:'Dados insuficientes: manter 11'};
+ options.sort((a,b)=>b.data.score-a.data.score||Math.abs(a.size-11)-Math.abs(b.size-11));
+ return {size:options[0].size,score:options[0].data.score,cycle:completedCycles,rounds:rows.length,
+  reason:`Ciclo ${completedCycles} • ${ADAPT_CYCLE} rodadas • cobertura14+ / jogo + ROI vs controle`};
+}
+function summarizeAdaptivePools(main,control,result,payout){
+ const scored={};
+ for(const size of ADAPT_SIZES){
+  const a=evalSet(main.pool.slice(0,size),result,payout),b=evalSet(control.pool.slice(0,size),result,payout);
+  scored[size]={won:a.won,spent:a.spent,roi:a.roi,controlWon:b.won,controlSpent:b.spent,controlRoi:b.roi,
+   hits14:a.count[14]+a.count[15],hits15:a.count[15],cover14:main.counts[size],controlCover14:control.counts[size]};
+ }
+ return scored;
+}
+
+// 🧬 EVOLUÇÃO MATEMÁTICA V1.9 — três hipóteses realmente calculáveis, não rótulos.
+// A base é SEMPRE o ranking anterior ao sorteio. As duas equações abaixo usam
+// somente resultados de rodadas PASSADAS no mesmo modo; nunca olham o sorteio alvo.
+// K1/K0 históricos jamais sofrem mutação. Carteiras evoluídas são EXPERIMENTAIS.
+const EVO_VERSION='EV_V1_9', EVO_CYCLE=5, EVO_XP_ROUNDS=20;
+const EVO_ARMS=['base','refino','variacao','familia'];
+const EVO_LABEL={base:'Original experimental',refino:'Refino',variacao:'Variação',familia:'Nova família'};
+function evoPast(contest,mode){
+ const src=mode==='real'?'manual':'virtual';
+ return store.history.filter(r=>r.status==='revealed'&&r.resultSource===src&&
+   r.contest<contest&&validNums(r.result,15)).sort((a,b)=>a.contest-b.contest).slice(-20);
+}
+function evoRank(base,contest,id,arm,mode){
+ if(arm==='base')return base.slice();
+ const past=evoPast(contest,mode),last5=past.slice(-5),last10=past.slice(-10);
+ const freq=(n,rows)=>rows.length?rows.reduce((a,r)=>a+(r.result.includes(n)?1:0),0)/rows.length:.60;
+ const score=base.map((n,i)=>{
+  const prior=(25-i)/25, f5=freq(n,last5),f10=freq(n,last10),f20=freq(n,past);
+  // Eq1: preserva 75% do ranking original; 25% para frequência recente.
+  const refino=.75*prior+.25*f5;
+  // Eq2: preserva 60%; valoriza ausência recente e estabilidade longa.
+  const variacao=.60*prior+.25*(1-f5)+.15*f20;
+  // Eq3: hipótese inédita de contraste entre janelas; libera após XP.
+  const familia=.40*prior+.35*Math.max(0,Math.min(1,.5+(f5-f20)))+.25*(1-f10);
+  return {n,i,v:{refino,variacao,familia}[arm]};
+ });
+ score.sort((a,b)=>b.v-a.v||a.i-b.i||a.n-b.n);
+ return score.map(v=>v.n);
+}
+function evoCompleted(id,mode){
+ const src=mode==='real'?'manual':'virtual';
+ return store.history.filter(r=>r.resultSource===src&&r.evolutionResults?.[id])
+   .sort((a,b)=>a.contest-b.contest);
+}
+function evoSum(rows,id,arm){
+ const vals=rows.map(r=>r.evolutionResults?.[id]?.[arm]).filter(Boolean);
+ if(!vals.length||vals.some(x=>x.won===null))return null;
+ const spent=vals.reduce((a,x)=>a+x.spent,0),won=vals.reduce((a,x)=>a+x.won,0);
+ return spent?{roi:won/spent-1,won,spent,n:vals.length}:null;
+}
+function evolutionDecision(id,mode){
+ const rows=evoCompleted(id,mode),xp=Math.min(100,Math.round(100*rows.length/EVO_XP_ROUNDS));
+ const cycles=Math.floor(rows.length/EVO_CYCLE),unlocked=xp>=100;
+ const result={applied:'base',label:'Base',xp,cycles,rounds:rows.length,
+   unlocked,prepared:true,reason:cycles<2?'Equações em teste paralelo':'Analisando dois ciclos'};
+ if(cycles<2)return result;
+ // Comparação prospectiva: ao menos dois ciclos já CONCLUÍDOS, não apenas um sorteio.
+ const last=rows.slice((cycles-1)*EVO_CYCLE,cycles*EVO_CYCLE),
+       before=rows.slice((cycles-2)*EVO_CYCLE,(cycles-1)*EVO_CYCLE);
+ const arms=unlocked?['refino','variacao','familia']:['refino','variacao'];
+ const baseLast=evoSum(last,id,'base'),baseBefore=evoSum(before,id,'base');
+ const candidates=[];
+ if(baseLast&&baseBefore)for(const arm of arms){
+  const a=evoSum(last,id,arm),b=evoSum(before,id,arm);
+  // Somente carteiras experimentais: requer retorno superior à BASE nos dois ciclos,
+  // vantagem >=1 ponto percentual pooled e ausência de rateio pendente.
+  if(a&&b&&a.n===EVO_CYCLE&&b.n===EVO_CYCLE&&
+      a.roi>baseLast.roi&&b.roi>baseBefore.roi){
+   const score=(a.won+b.won)/(a.spent+b.spent)-1;
+   const ref=(baseLast.won+baseBefore.won)/(baseLast.spent+baseBefore.spent)-1;
+   if(score-ref>=.01)candidates.push({arm,score,gain:score-ref});
+  }
+ }
+ candidates.sort((a,b)=>b.gain-a.gain||a.arm.localeCompare(b.arm));
+ if(candidates.length){result.applied=candidates[0].arm;result.label=EVO_LABEL[result.applied];
+   result.reason=`Comparação experimental favorável nos ciclos ${cycles-1} e ${cycles}`;}
+ else result.reason='Base mantida; nenhuma variante superou a base em dois ciclos';
+ return result;
+}
+function evoFreeze(base,contest,id,mode){
+ const arms={};for(const arm of EVO_ARMS){
+  const ranking=evoRank(base,contest,id,arm,mode);
+  if(!validNums(ranking,25))throw Error(`Evolução ${id}/${arm}: ranking inválido`);
+  arms[arm]=mapping(ranking);
+  if(arms[arm].length!==11||new Set(arms[arm].map(canonical)).size!==11)
+   throw Error(`Evolução ${id}/${arm}: matriz inválida`);
+ }
+ return arms;
+}
+function evoResults(frozen,result,payout){
+ return Object.fromEntries(EVO_ARMS.map(arm=>{
+  const o=evalSet(frozen[arm],result,payout);
+  return [arm,{won:o.won,spent:o.spent,roi:o.roi,hit11:o.count[11],
+    hit12:o.count[12],hit13:o.count[13],hit14:o.count[14],hit15:o.count[15]}];
+ }));
+}
 // O MAX11.008 histórico é K1. Sua extensão T30.72 (11 jogos) é EXPERIMENTAL,
 // e os sorteios virtuais são independentes do universo Lotofácil real.
 const MAX_ID='MAX11.008', SALDO_ID='SALDO60', C3_ID='C3_OWN_SUPPORT', R1_ID='R1_STABLE_LEADER', MAX_LAST_VERIFIED=3784;
@@ -237,21 +391,40 @@ const inCurrent=()=>store.current;
 function deriveNextContest(){const h=[...store.history.map(x=>x.contest),...(store.abandoned||[]).map(x=>x.contest)];let mx=Math.max(1021,...h);return mx+1}
 function stepRender(){let st=inCurrent()?.status||'idle';['step0','step1','step2'].forEach((id,i)=>{const el=$(id);el.classList.toggle('active',(st==='idle'&&i===0)||(st==='prepared'&&i===1)||(st==='frozen'&&i===2));el.classList.toggle('done',(st==='prepared'&&i===0)||(st==='frozen'&&i<2)||(st==='revealed'))});$('phasePill').textContent=({'idle':'AGUARDANDO','prepared':'PREPARADA','frozen':'CONGELADA','revealed':'CONFERIDA'})[st];$('phasePill').className='pill '+(st==='revealed'?'good':st==='frozen'?'warn':'');$('progressFill').style.width=({'idle':'0%','prepared':'33%','frozen':'66%','revealed':'100%'})[st];$('progressText').textContent=({'idle':'Rodada não iniciada.','prepared':'Sistemas preparados; ative-os com um clique.','frozen':effectiveRoundMode()==='simulator'?'Carteiras congeladas. Pronto para sorteio virtual.':'Carteiras congeladas. Aguarda resultado real.','revealed':'Rodada conferida e salva no histórico.'})[st]}
 function msg(content,type='info'){$('mainMessage').className='notice '+(type==='error'?'error':type==='green'?'green':type==='warn'?'amber':'');$('mainMessage').textContent=content}
-function showRobots(){let cur=inCurrent();$('robotGrid').innerHTML=ROBOTS.map((r,i)=>{let pack=cur?.systems?.[r.id];let sts=pack?.abstain?'ABSTENÇÃO':pack?.games?.length?(pack.r1Decision?.statusK0?'K0 ORIGINAL • 11 DEMO':pack.originalK1?'K1 ORIGINAL + 11 EXPERIMENTAIS':([SALDO_ID,C3_ID,R1_ID].includes(r.id)&&pack.origin?.includes('INELEGÍVEL')?'11 DEMO • INELEGÍVEL':`${pack.games.length} JOGOS CONGELADOS`)):pack?.error?'FONTE INDISPONÍVEL':cur?.status==='prepared'?'PRONTO PARA ATIVAR':'AGUARDANDO';let cl=pack?.games?.length?'good':pack?.abstain?'warn':pack?.error?'bad':'';return `<article class="robot"><div class="robot-head"><div class="bot-icon">${pad(i+1)}</div><div class="pill" style="font-size:9px">${i+1}/9</div></div><div class="nm" style="margin-top:9px">${H(r.id)}</div><div class="typ">${H(r.type)}</div><p>${H(r.desc)}</p><span class="state ${cl}">${sts}</span></article>`}).join('')}
+function showRobots(){let cur=inCurrent();$('robotGrid').innerHTML=ROBOTS.map((r,i)=>{let pack=cur?.systems?.[r.id];let sts=pack?.abstain?'ABSTENÇÃO':pack?.games?.length?(pack.r1Decision?.statusK0?`K0 ORIGINAL • ${pack.games.length} DEMO`:pack.originalK1?`K1 ORIGINAL + ${pack.games.length} EXPERIMENTAIS`:([SALDO_ID,C3_ID,R1_ID].includes(r.id)&&pack.origin?.includes('INELEGÍVEL')?`${pack.games.length} DEMO • INELEGÍVEL`:`${pack.games.length} JOGOS CONGELADOS`)):pack?.error?'FONTE INDISPONÍVEL':cur?.status==='prepared'?'PRONTO PARA ATIVAR':'AGUARDANDO';let cl=pack?.games?.length?'good':pack?.abstain?'warn':pack?.error?'bad':'';const ad=pack?.adaptiveChoice||adaptiveChoice(r.id,store.roundMode);
+const ev=pack?.evolutionChoice||evolutionDecision(r.id,store.roundMode);
+const evLabel=ev.applied==='base'?'Base':EVO_LABEL[ev.applied];
+const evoHint=ev.unlocked?'🧬 Refino · Variação · Nova família liberada':`🧬 Refino · Variação · Nova família ${ev.xp}% XP`;
+return `<article class="robot"><div class="robot-head"><div class="bot-icon">${pad(i+1)}</div><div class="pill" style="font-size:9px">${i+1}/9</div></div><div class="nm" style="margin-top:9px">${H(r.id)}</div><div class="typ">${H(r.type)}</div><p>${H(r.desc)}</p><span class="state ${cl}">${sts}</span><div class="tiny" style="margin-top:8px;color:var(--cyan)" title="Índice experimental: cobertura de 14+ por jogo e ROI virtual comparado ao controle. Não representa probabilidade de acerto.">⚡ ${pack?.games?.length||ad.size} jogos • eficiência ${ad.score===null?'calibrando':ad.score.toFixed(0)+'/100'}</div><div class="tiny" style="margin-top:5px;color:#b8dceb" title="Equações experimentais avaliadas em paralelo, sem alterar o bilhete K1 original.">${evoHint}<br>Carteira: ${H(evLabel)} • ${ev.cycles} ciclo(s)</div></article>`}).join('')}
 function totalGames(){return Object.values(inCurrent()?.systems||{}).reduce((n,s)=>n+(s.games?.length||0),0)}
-function updateKpis(){const cur=inCurrent();const games=totalGames();$('kContest').textContent=cur?.contest?`C${cur.contest}`:'—';$('kGames').textContent=games;$('kRobots').textContent=ROBOTS.length;$('kSpent').textContent=money(games*PRICE);$('kPrizes').textContent=cur?.status==='revealed'?(cur.analysis?.global?.countPrize??'—'):'—';$('topMode').textContent=(effectiveRoundMode()==='simulator'?'SIMULADOR':'TEMPO REAL')+' · '+(store.mode==='demo'?'MAX + SALDO + C3 + R1 (W10) + DEMO':'IMPORTADO');$('topMode').className='pill '+(store.mode==='demo'?'warn':'good');const source=store.mode==='demo'?'Modo misto: MAX11.008 original K1; SALDO60 K9E6 original K1 SOMENTE nos concursos terminados em 1 (se inelegível: 11 jogos demonstrativos); R1 como roteador original quando elegível (W20/W50/K0); cinco outros sistemas demonstrativos. Carteiras T30.72 sempre experimentais. Sorteio virtual independente.':`Modo importado: ${Object.keys(store.source?.systems||{}).length}/9 sistemas com dados externos. Os algoritmos não são autenticados pelo HTML.`;$('sourceInfo').textContent=source;$('integrityNotice').textContent=store.mode==='demo'?'MAX11.008 K1 é separado dos 11 jogos T30.72 experimentais. SALDO60 K9E6 K1 é elegível só quando concurso termina em 1 (até C3781), foi REPROVADO no REAL-READINESS 14/15. R1 seletor K1/K0 quando elegível; cinco sistemas ainda demonstrativos. Em ciclos não elegíveis, os 11 SALDO são apenas ilustrativos. Sorteios virtuais não demonstram previsão.':'A validação matemática das implementações originais dos dados importados continua externa a este arquivo. O HTML valida estrutura e congelamento, não autentica autoria.'}
-function drawTickets(){const cur=inCurrent();const show=cur&&['frozen','revealed'].includes(cur.status);$('ticketsPanel').classList.toggle('hidden',!show);if(!show)return;let n=totalGames();$('gamesPill').textContent=n+' JOGOS';$('freezeInfo').textContent=`Congelado em ${cur.frozenAt?new Date(cur.frozenAt).toLocaleString('pt-BR'):'—'} • ${cur.sourceMode==='demo'?'DEMONSTRAÇÃO':'FONTE IMPORTADA'} • ID ${H(cur.fingerprint)}`;
-$('ticketList').innerHTML=ROBOTS.map(bot=>{const sys=cur.systems[bot.id];if(!sys?.games?.length)return `<div class="notice amber">${H(bot.id)}: ${H(sys?.abstain?'abstenção congelada':sys?.error||'sem fonte prévia')}. Nenhuma carteira foi inventada.</div>`;return `<details><summary>${H(bot.id)} — ${sys.games.length} jogos ${sys.originalK1?'EXPERIMENTAIS':''}<span class="muted">• tocar para expandir</span></summary><p>${H(sys.origin)}</p>${sys.r1Decision?`<div class="notice amber"><strong>🔬 Decisão original R1:</strong> ${H(sys.r1Decision.escolha)}; W20=${H(sys.r1Decision.lider20)}, W50=${H(sys.r1Decision.lider50)}. ${sys.r1Decision.statusK0?'K0: nenhuma aposta original; os 11 jogos são apenas DEMONSTRAÇÃO.':'K1 do sistema escolhido separado; 11 jogos são uma extensão EXPERIMENTAL.'} STRESS FAIL 9/10.</div>`:''}${sys.originalK1?`<div class="notice green"><strong>🔬 Bilhete K1 original (fora da carteira de 11 jogos)</strong> • histórico C${sys.originalK1.concursoHistorico}, dados até C${sys.originalK1.ultimoResultadoUtilizado}<div class="balls" style="margin-top:8px">${sys.originalK1.dezenas.map(n=>`<span class="ball smallball">${pad(n)}</span>`).join('')}</div><p class="tiny">Carteira T30.72 de 11 jogos EXPERIMENTAL (o ranking completo de 25 do SALDO é uma extensão). K1 fica separado. Sorteio virtual não equivale ao resultado histórico.</p></div>`:''}${sys.games.map((g,i)=>`<div class="game-line"><div class="game-title">JOGO ${pad(i+1)} <span>15 dezenas</span></div><div class="balls">${g.map(n=>`<span class="ball smallball">${pad(n)}</span>`).join('')}</div></div>`).join('')}</details>`}).join('')}
+function updateKpis(){const cur=inCurrent();const games=totalGames();$('kContest').textContent=cur?.contest?`C${cur.contest}`:'—';$('kGames').textContent=games;$('kRobots').textContent=ROBOTS.length;$('kSpent').textContent=money(games*PRICE);$('kPrizes').textContent=cur?.status==='revealed'?(cur.analysis?.global?.countPrize??'—'):'—';$('topMode').textContent=(effectiveRoundMode()==='simulator'?'SIMULADOR':'TEMPO REAL')+' · '+(store.mode==='demo'?'⚡ EFICIÊNCIA ADAPTATIVA • K1 SEPARADO':'IMPORTADO');$('topMode').className='pill '+(store.mode==='demo'?'warn':'good');const source=store.mode==='demo'?'⚡ Jogos adaptativos + 🧬 Evolução Matemática experimental: refino, variação, família por XP. MAX11.008 original K1; SALDO60 K9E6 original K1 SOMENTE nos concursos terminados em 1 (se inelegível: carteiras demonstrativas); R1 como roteador original quando elegível (W20/W50/K0); cinco outros sistemas demonstrativos. Carteiras adaptativas (6/11/22/44/88) sempre experimentais; novas rodadas ajustam o tamanho em ciclos de cinco. Sorteio virtual independente.':`Modo importado: ${Object.keys(store.source?.systems||{}).length}/9 sistemas com dados externos. Os algoritmos não são autenticados pelo HTML.`;$('sourceInfo').textContent=source;$('integrityNotice').textContent=store.mode==='demo'?'MAX11.008 K1 é separado das carteiras virtuais adaptativas e evoluídas. SALDO60 K9E6 K1 é elegível só quando concurso termina em 1 (até C3781), foi REPROVADO no REAL-READINESS 14/15. R1 seletor K1/K0 quando elegível; cinco sistemas ainda demonstrativos. Em ciclos não elegíveis, os jogos SALDO são apenas ilustrativos. Sorteios virtuais não demonstram previsão.':'No modo importado, a autoria dos algoritmos deve ser conferida na origem; a evolução é calculada apenas quando há ranking completo.'}
+function drawTickets(){const cur=inCurrent();const show=cur&&['frozen','revealed'].includes(cur.status);$('ticketsPanel').classList.toggle('hidden',!show);if(!show)return;let n=totalGames();$('gamesPill').textContent=n+' JOGOS';$('freezeInfo').textContent=`Congelado em ${cur.frozenAt?new Date(cur.frozenAt).toLocaleString('pt-BR'):'—'} • ⚡ Eficiência Adaptativa ${cur.adaptiveVersion||'legado'} • ${cur.sourceMode==='demo'?'MISTO/DEMO':'FONTE IMPORTADA'} • ID ${H(cur.fingerprint)}`;
+$('ticketList').innerHTML=ROBOTS.map(bot=>{const sys=cur.systems[bot.id];if(!sys?.games?.length)return `<div class="notice amber">${H(bot.id)}: ${H(sys?.abstain?'abstenção congelada':sys?.error||'sem fonte prévia')}. Nenhuma carteira foi inventada.</div>`;return `<details><summary>${H(bot.id)} — ${sys.games.length} jogos ${sys.originalK1?'EXPERIMENTAIS':''}<span class="muted">• tocar para expandir</span></summary><p>${H(sys.origin)}</p>${sys.r1Decision?`<div class="notice amber"><strong>🔬 Decisão original R1:</strong> ${H(sys.r1Decision.escolha)}; W20=${H(sys.r1Decision.lider20)}, W50=${H(sys.r1Decision.lider50)}. ${sys.r1Decision.statusK0?`K0: nenhuma aposta original; a carteira de ${sys.games.length} jogos é apenas DEMONSTRAÇÃO.`:`K1 do sistema escolhido separado; ${sys.games.length} jogos são uma extensão EXPERIMENTAL.`} STRESS FAIL 9/10.</div>`:''}${sys.originalK1?`<div class="notice green"><strong>🔬 Bilhete K1 original (fora da carteira adaptativa)</strong> • histórico C${sys.originalK1.concursoHistorico}, dados até C${sys.originalK1.ultimoResultadoUtilizado}<div class="balls" style="margin-top:8px">${sys.originalK1.dezenas.map(n=>`<span class="ball smallball">${pad(n)}</span>`).join('')}</div><p class="tiny">Carteira adaptativa EXPERIMENTAL (primeiros 11 seguem T30.72; rankings adicionais são extensões). K1 fica separado. Sorteio virtual não equivale ao resultado histórico.</p></div>`:''}${sys.games.map((g,i)=>`<div class="game-line"><div class="game-title">JOGO ${pad(i+1)} <span>15 dezenas</span></div><div class="balls">${g.map(n=>`<span class="ball smallball">${pad(n)}</span>`).join('')}</div></div>`).join('')}</details>`}).join('')}
 function renderResultArea(){const cur=inCurrent();const frozen=cur?.status==='frozen';const sim=effectiveRoundMode()==='simulator';$('simRevealBtn').classList.toggle('hidden',!frozen||!sim);$('simRevealBtn').disabled=!frozen||!sim;$('resultPanel').classList.toggle('hidden',!frozen||sim);$('analysisPanel').classList.toggle('hidden',cur?.status!=='revealed');if(cur?.status==='revealed')renderAnalysis(cur);}
 function ui(){const cur=inCurrent();let phase=cur?.status||'idle';$('contestInput').value=cur?.status==='revealed'?deriveNextContest():(cur?.contest??(store.mode==='imported'&&store.source?.contest||deriveNextContest()));$('contestInput').disabled=phase!=='idle';$('nextBtn').disabled=phase==='prepared'||phase==='frozen';$('nextBtn').textContent=phase==='revealed'?'➜ PRÓXIMA RODADA':'➜ PRÓXIMA RODADA';$('activateBtn').disabled=phase!=='prepared';['pay11','pay12','pay13','pay14','pay15'].forEach(n=>{if(cur?.payoutInputs)$(n).value=cur.payoutInputs[n]??''});showRobots();stepRender();drawTickets();renderResultArea();updateKpis();renderHistory();updateReportButton();let disableMode=phase==='prepared'||phase==='frozen';document.querySelectorAll('input[name="roundMode"]').forEach(x=>{x.checked=x.value===effectiveRoundMode();x.disabled=disableMode});$('roundModeHint').textContent=effectiveRoundMode()==='simulator'?'Sorteio virtual e conferência automáticos; sem digitar dezenas.':'Aguarda a divulgação oficial; informe manualmente as 15 dezenas.';$('lastStepLabel').textContent=effectiveRoundMode()==='simulator'?'Simular Resultado':'Conferir Resultado';document.querySelectorAll('input[name="sourceMode"]').forEach(x=>{x.checked=x.value===store.mode;x.disabled=disableMode});$('validateImportBtn').disabled=disableMode;}
 function nextRound(){const cur=inCurrent();if(cur?.status==='prepared'||cur?.status==='frozen'){msg('Já existe uma rodada em andamento. Conclua a conferência antes de avançar.','warn');return}let n=Number($('contestInput').value||deriveNextContest());if(!Number.isSafeInteger(n)||n<1){msg('Informe um concurso inteiro válido.','error');return}if(store.history.some(r=>r.contest===n)||(store.abandoned||[]).some(r=>r.contest===n)){msg(`O concurso C${n} já foi registrado ou teve carteira congelada e descartada. Não podemos refazer esse concurso como teste novo.`,'error');return}if(store.mode==='demo'&&(n<101||n>MAX_LAST_VERIFIED)){msg('MAX11.008 exige histórico válido entre C101 e C3784. Não foi possível executar uma rodada híbrida fora desse intervalo. Use importação para outros concursos, sem atribuir autenticidade ao MAX.', 'warn');return}if(store.mode==='imported'&&store.source?.contest!==n){msg(`Importe primeiro um pacote de C${n} na aba DADOS.`, 'warn');return}store.current={contest:n,status:'prepared',preparedAt:new Date().toISOString(),systems:{},sourceMode:store.mode,roundMode:store.roundMode};save();ui();msg(`C${n} preparado. Nove sistemas listados. Clique ATIVAR SISTEMAS para gerar e congelar os jogos.`,'green');}
-function activate(){const cur=inCurrent();if(!cur||cur.status!=='prepared')return;const systems={};for(const bot of ROBOTS){
+function activate(){const cur=inCurrent();if(!cur||cur.status!=='prepared')return;const systems={},shadowFrozen={},evolutionFrozen={};for(const bot of ROBOTS){
  let input;try{input=getSourceFor(cur.contest,bot.id)}catch(e){systems[bot.id]={error:e.message};continue}
  if(!input){systems[bot.id]={error:'Sem ranking, jogos ou decisão de abstenção importados'};continue}
  if(input.abstain){systems[bot.id]={abstain:true,origin:input.origin};continue}
- const games=input.games?input.games.map(x=>x.slice()):mapping(input.ranking);
- if(games.length!==11||games.some(g=>!validNums(g,15))||new Set(games.map(canonical)).size!==11){systems[bot.id]={error:'Carteira não passou na validação'};continue}
- systems[bot.id]={games,origin:input.origin,control:randomControl(cur.contest,bot.id)};
+ let games,control,choice,evChoice=null;
+ if(input.games){
+  // Carteira importada pronta, sem ranking: não inventar as 77 combinações ausentes.
+  games=input.games.map(x=>x.slice());control=randomControl(cur.contest,bot.id);
+  choice={size:games.length,score:null,cycle:0,reason:'Jogos importados; adaptação requer ranking'};
+ }else{
+  evChoice=evolutionDecision(bot.id,cur.roundMode||store.roundMode);
+  const baseRank=input.ranking.slice();
+  evolutionFrozen[bot.id]=evoFreeze(baseRank,cur.contest,bot.id,cur.roundMode||store.roundMode);
+  const appliedRank=evoRank(baseRank,cur.contest,bot.id,evChoice.applied,cur.roundMode||store.roundMode);
+  const mainPool=adaptivePool(appliedRank,cur.contest,bot.id);
+  const controlPool=adaptivePool(demoRank(cur.contest,`CONTROLE:${bot.id}`),cur.contest,`CONTROLE:${bot.id}`);
+  choice=adaptiveChoice(bot.id,cur.roundMode||store.roundMode);
+  games=mainPool.pool.slice(0,choice.size);control=controlPool.pool.slice(0,choice.size);
+  shadowFrozen[bot.id]={main:mainPool,control:controlPool};
+ }
+ if(!ADAPT_SIZES.includes(games.length)||games.some(g=>!validNums(g,15))||new Set(games.map(canonical)).size!==games.length){systems[bot.id]={error:'Carteira adaptativa não passou na validação'};continue}
+ systems[bot.id]={games,origin:input.origin,control,adaptiveChoice:choice,evolutionChoice:evChoice};
  if([MAX_ID,SALDO_ID,C3_ID,R1_ID].includes(bot.id)&&input.originalK1)systems[bot.id].originalK1=input.originalK1;
  if(bot.id===R1_ID&&input.r1Decision)systems[bot.id].r1Decision=input.r1Decision;
  }
@@ -262,7 +435,7 @@ if(store.mode==='demo'&&c3Eligible(cur.contest)&&!systems[C3_ID]?.originalK1){ms
 const ok=Object.values(systems).filter(s=>s.games).length;
 if(store.mode==='imported'&&Object.values(systems).some(s=>s.error)){msg('Pacote incompleto: para manter a comparação de nove sistemas, informe jogos/rankings ou abstain:true para TODOS antes do congelamento.','error');return}
 if(!ok){msg('Nenhum sistema possui dados válidos. Selecione demonstração ou importe rankings/jogos na aba DADOS antes de ativar.','error');return}
-cur.systems=systems;cur.integrationVersion=store.mode==='demo'?'R1_STABLE_LEADER_V1_7':null;cur.status='frozen';cur.frozenAt=new Date().toISOString();cur.fingerprint=fHash(JSON.stringify({c:cur.contest,s:cur.systems,t:cur.frozenAt,m:VERSION})).toString(16).padStart(8,'0').toUpperCase();cur.price=PRICE;save();ui();msg(`C${cur.contest}: ${ok} sistemas com jogos, ${totalGames()} apostas simuladas congeladas. ${cur.sourceMode==='demo'?`MAX11.008 K1 + SALDO60 ${saldoEligible(cur.contest)?'K1 original elegível + 11 experimentais':'inelegível: 11 ilustrativos'}. Demais modelos não integrados continuam demonstrativos. Nenhum sorteio virtual demonstra poder preditivo.`:'Fonte fornecida: confira a autenticidade dos algoritmos externamente.'}`,'green')}
+cur.systems=systems;cur.adaptiveFrozen=shadowFrozen;cur.evolutionFrozen=evolutionFrozen;cur.adaptiveVersion=ADAPT_VERSION;cur.evolutionVersion=EVO_VERSION;cur.integrationVersion=store.mode==='demo'?'ADAPTIVE_EVOLUTION_V1_9':null;cur.status='frozen';cur.frozenAt=new Date().toISOString();cur.fingerprint=fHash(JSON.stringify({c:cur.contest,s:cur.systems,shadow:shadowFrozen,evolution:evolutionFrozen,t:cur.frozenAt,m:VERSION})).toString(16).padStart(8,'0').toUpperCase();cur.price=PRICE;save();ui();msg(`C${cur.contest}: ${ok} sistemas com jogos, ${totalGames()} apostas simuladas congeladas, quantidades adaptativas por robô. ${cur.sourceMode==='demo'?`MAX11.008 K1 + SALDO60 ${saldoEligible(cur.contest)?'K1 original elegível + carteira experimental':'inelegível: carteira ilustrativa'}. Demais modelos não integrados continuam demonstrativos. Nenhum sorteio virtual demonstra poder preditivo.`:'Fonte fornecida: confira a autenticidade dos algoritmos externamente.'}`,'green')}
 function payoutValues(){let obj={};for(let i of [11,12,13,14,15]){const raw=$('pay'+i).value.trim();if(!raw){obj[i]=null;continue}let n=Number(raw);if(!isFinite(n)||n<0)throw Error('Rateios não podem ser negativos.');obj[i]=n}return obj}
 function evalSet(games,result,prize){let hits=games.map(g=>g.filter(n=>result.includes(n)).length);let count={11:0,12:0,13:0,14:0,15:0};for(let h of hits)if(h>=11)count[h]++;let unknown=Object.keys(count).some(k=>count[k]&&prize[k]===null);let won=unknown?null:Object.keys(count).reduce((s,k)=>s+count[k]*(prize[k]||0),0);let spent=games.length*PRICE;return {hits,best:Math.max(0,...hits),avg:hits.reduce((a,b)=>a+b,0)/(hits.length||1),count,countPrize:Object.values(count).reduce((a,b)=>a+b,0),won,spent,roi:won===null?null:(won-spent)/spent}}
 function reveal(){const cur=inCurrent();if(cur?.status!=='frozen'||effectiveRoundMode()!=='real')return;let result,payout;try{result=parseInputDraw($('resultInput').value);payout=payoutValues();recordResult(result,payout,'manual')}catch(e){$('resultError').classList.remove('hidden');$('resultError').textContent=e.message;}}
@@ -271,11 +444,23 @@ function recordResult(result,payout,resultSource){const cur=inCurrent();if(cur?.
 if(store.history.some(x=>x.contest===cur.contest))throw Error('Concurso já registrado; operação bloqueada.');let entries={};for(const bot of ROBOTS){let sys=cur.systems[bot.id];if(!sys?.games)continue;entries[bot.id]={main:evalSet(sys.games,result,payout),control:evalSet(sys.control,result,payout)}}
 const allGames=Object.values(cur.systems).flatMap(s=>s.games||[]);const uniqueGames=new Set(allGames.map(canonical)).size;const glob=evalSet(allGames,result,payout);const control=evalSet(Object.values(cur.systems).flatMap(s=>s.control||[]),result,payout);
 cur.status='revealed';cur.result=result;cur.resultSource=resultSource;cur.payouts=payout;cur.payoutInputs=Object.fromEntries([11,12,13,14,15].map(i=>['pay'+i,$('pay'+i).value]));cur.revealedAt=new Date().toISOString();cur.analysis={entries,global:glob,control,uniqueGames,duplicateGames:allGames.length-uniqueGames};
+ const evolutionResults={};for(const [id,arms] of Object.entries(cur.evolutionFrozen||{})){
+   evolutionResults[id]=evoResults(arms,result,payout);
+ }
+ cur.evolutionResults=evolutionResults;
+ delete cur.evolutionFrozen; // liberar memória após resultado; manter somente os placares
+ const adaptiveResults={};for(const [id,pools] of Object.entries(cur.adaptiveFrozen||{})){
+   adaptiveResults[id]=summarizeAdaptivePools(pools.main,pools.control,result,payout);
+ }
+ cur.adaptiveResults=adaptiveResults;
+ // Manter medidas dos cinco tamanhos e hash congelado, mas não milhares de bilhetes
+ // extras em todas as rodadas no localStorage, que possui espaço limitado.
+ delete cur.adaptiveFrozen;
  const originalK1=cur.systems[MAX_ID]?.originalK1;if(originalK1&&validNums(originalK1.dezenas,15))cur.analysis.max11K1=evalSet([originalK1.dezenas],result,payout);
  const saldoK1=cur.systems[SALDO_ID]?.originalK1;if(saldoK1&&validNums(saldoK1.dezenas,15))cur.analysis.saldo60K1=evalSet([saldoK1.dezenas],result,payout);
  const c3K1=cur.systems[C3_ID]?.originalK1;if(c3K1&&validNums(c3K1.dezenas,15))cur.analysis.c3K1=evalSet([c3K1.dezenas],result,payout);
  const r1K1=cur.systems[R1_ID]?.originalK1;if(r1K1&&validNums(r1K1.dezenas,15))cur.analysis.r1K1=evalSet([r1K1.dezenas],result,payout);
- let summary={integrationVersion:cur.integrationVersion||null,preparedAt:cur.preparedAt,contest:cur.contest,status:cur.status,mode:cur.sourceMode,roundMode:effectiveRoundMode(),resultSource,frozenAt:cur.frozenAt,revealedAt:cur.revealedAt,fingerprint:cur.fingerprint,systems:cur.systems,result:cur.result,payouts:cur.payouts,analysis:cur.analysis,price:cur.price};store.history.unshift(summary);save();$('resultError').classList.add('hidden');ui();msg(`C${cur.contest} ${resultSource==='virtual'?'simulado e':'registrado e'} conferido. ${glob.countPrize} premiação(ões) em ${glob.hits.length} jogos simulados. ${cur.sourceMode==='demo'?'MAX histórico + 11-jogos experimentais e oito demonstrações. Sem evidência preditiva.':'Confira a procedência dos sistemas importados.'}`,'green');$('analysisPanel').scrollIntoView({behavior:'smooth',block:'start'});}
+ let summary={integrationVersion:cur.integrationVersion||null,adaptiveVersion:cur.adaptiveVersion||null,adaptiveResults:cur.adaptiveResults||null,evolutionVersion:cur.evolutionVersion||null,evolutionResults:cur.evolutionResults||null,preparedAt:cur.preparedAt,contest:cur.contest,status:cur.status,mode:cur.sourceMode,roundMode:effectiveRoundMode(),resultSource,frozenAt:cur.frozenAt,revealedAt:cur.revealedAt,fingerprint:cur.fingerprint,systems:cur.systems,result:cur.result,payouts:cur.payouts,analysis:cur.analysis,price:cur.price};store.history.unshift(summary);save();$('resultError').classList.add('hidden');ui();msg(`C${cur.contest} ${resultSource==='virtual'?'simulado e':'registrado e'} conferido. ${glob.countPrize} premiação(ões) em ${glob.hits.length} jogos simulados. ⚡ Eficiência Adaptativa + 🧬 Evolução Matemática registradas. ${cur.sourceMode==='demo'?'K1 histórico e carteiras adaptativas experimentais/demonstrativas. Sem evidência preditiva.':'Confira a procedência dos sistemas importados.'}`,'green');$('analysisPanel').scrollIntoView({behavior:'smooth',block:'start'});}
 function scoreString(o){return o.won===null?'ROI pendente':pct(o.roi)}
 function countsString(o){return [11,12,13,14,15].map(k=>`${k}: ${o.count[k]}`).join(' • ')}
 function roiAccumulated(id,cur){
@@ -290,7 +475,7 @@ function roiAccumulated(id,cur){
  return {n:usable.length,spent,received,roi:!spent||received===null?null:(received-spent)/spent,
   originalCount,illustrativeCount};
 }
-function renderAnalysis(cur){const o=cur.analysis;const label=cur.sourceMode==='demo'?'MODO MISTO — K1 HISTÓRICOS, CARTEIRAS EXPERIMENTAIS E DEMONSTRAÇÕES':'DADOS IMPORTADOS — ORIGEM EXTERNA';$('analysisBody').innerHTML=`<div class="notice ${cur.sourceMode==='demo'?'amber':'green'}">${cur.resultSource==='virtual'?'SORTEIO VIRTUAL INDEPENDENTE':'RESULTADO INFORMADO MANUALMENTE'} • Dezenas: <strong>${cur.result.map(pad).join(' ')}</strong>.<br>${label}. O controle aleatório tem o mesmo número de apostas e foi congelado antes da conferência. Nenhuma diferença isolada prova capacidade preditiva.</div><div class="grid-info"><div class="data"><div class="l">Melhor acerto</div><div class="v">${o.global.best}/15</div></div><div class="data"><div class="l">Jogos premiados</div><div class="v">${o.global.countPrize}</div></div><div class="data"><div class="l">Prêmios virtuais</div><div class="v smallv">${money(o.global.won)}</div></div><div class="data"><div class="l">ROI virtual</div><div class="v smallv ${o.global.roi>=0?'good':'bad'}">${scoreString(o.global)}</div></div></div><div class="notice">Faixas registradas: ${countsString(o.global)}. Gasto virtual ${money(o.global.spent)}. Controle aleatório: ${o.control.countPrize} jogo(s) premiado(s) • melhor ${o.control.best}/15 • ROI ${scoreString(o.control)}.<br>Carteiras: ${o.uniqueGames} combinações distintas e ${o.duplicateGames} ocorrência(s) repetida(s) entre sistemas.</div>${cur.analysis.max11K1?`<div class="notice green"><strong>MAX11.008 original K1 — contagem SEPARADA:</strong> ${cur.analysis.max11K1.hits[0]}/15 acertos no resultado ${cur.resultSource==='virtual'?'VIRTUAL':'informado'}; custo equivalente isolado ${money(cur.analysis.max11K1.spent)}; ROI ${scoreString(cur.analysis.max11K1)}. <strong>Não soma aos 99 jogos.</strong> Histórico C${cur.systems[MAX_ID].originalK1.concursoHistorico}. Esta comparação não valida previsão.</div>`:''}${cur.analysis.saldo60K1?`<div class="notice green"><strong>SALDO60 K9E6 original K1 — contagem SEPARADA:</strong> ${cur.analysis.saldo60K1.hits[0]}/15 acertos no resultado ${cur.resultSource==='virtual'?'VIRTUAL':'informado'}; custo isolado ${money(cur.analysis.saldo60K1.spent)}; ROI ${scoreString(cur.analysis.saldo60K1)}. <strong>Não soma aos 99 jogos. READINESS: REPROVADO 14/15.</strong> Histórico C${cur.systems[SALDO_ID].originalK1.concursoHistorico}.</div>`:''}${cur.systems?.[R1_ID]?.r1Decision?`<div class="notice amber"><strong>R1_STABLE_LEADER original — decisão SEPARADA:</strong> ${H(cur.systems[R1_ID].r1Decision.escolha)} (W20=${H(cur.systems[R1_ID].r1Decision.lider20)}; W50=${H(cur.systems[R1_ID].r1Decision.lider50)}). ${cur.analysis.r1K1?`K1 selecionado: ${cur.analysis.r1K1.hits[0]}/15 acertos virtuais, ROI isolado ${scoreString(cur.analysis.r1K1)}.`:'K0: sem bilhete, custo R$ 0,00, ROI não aplicável.'} Os 11 jogos do cartão são ${cur.analysis.r1K1?'extensão EXPERIMENTAL':'apenas DEMONSTRAÇÃO'}; NÃO medem a performance do R1. Stress confirmatório reprovado 9/10.</div>`:''}${cur.analysis.c3K1?`<div class="notice green"><strong>C3_OWN_SUPPORT original K1 — contagem SEPARADA:</strong> ${cur.analysis.c3K1.hits[0]}/15 acertos no resultado ${cur.resultSource==='virtual'?'VIRTUAL':'informado'}; custo isolado ${money(cur.analysis.c3K1.spent)}; ROI ${scoreString(cur.analysis.c3K1)}. <strong>Não soma aos 99 jogos. READINESS: REPROVADO 12/15.</strong> Histórico C${cur.systems[C3_ID].originalK1.concursoHistorico}.</div>`:''}<div class="table-wrap"><table class="table"><thead><tr><th>Sistema</th><th>Melhor</th><th>11+</th><th>12+</th><th>13+</th><th>14+</th><th>15</th><th class="money">Recebeu</th><th class="money">ROI rodada</th><th class="money">ROI acumulado</th></tr></thead><tbody>${ROBOTS.map(b=>{const e=o.entries[b.id];if(!e)return `<tr><td>${H(b.id)}</td><td colspan="9" class="muted">Abstenção ou sem fonte</td></tr>`;const a=e.main;const accum=roiAccumulated(b.id,cur);const cls=accum.roi===null?'':accum.roi>=0?'good':'bad';return `<tr><td><strong>${H(b.id)}</strong></td><td>${a.best}</td><td>${a.countPrize}</td><td>${a.count[12]+a.count[13]+a.count[14]+a.count[15]}</td><td>${a.count[13]+a.count[14]+a.count[15]}</td><td>${a.count[14]+a.count[15]}</td><td>${a.count[15]}</td><td class="money">${money(a.won)}</td><td class="money">${scoreString(a)}</td><td class="money ${cls}" title="${accum.originalCount} rodada(s) com K1 histórico e carteira derivada; ${accum.illustrativeCount} demonstrativa(s)">${accum.roi===null?'Pendente':pct(accum.roi)}<div class="tiny muted">${accum.n} rodada(s)</div></td></tr>`}).join('')}</tbody></table></div><div class="notice amber" style="margin-top:10px">ROI acumulado = (prêmios totais − custo total) ÷ custo total. Considera apenas rodadas concluídas do mesmo tipo de resultado (virtual ou informado), sem incluir K1 separado. Históricos demonstrativos e extensões T30.72 aparecem juntos: <strong>não são evidência de superioridade do algoritmo original.</strong> Consulte o número de rodadas e a origem de cada sistema.</div><div class="actions"><button class="btn ghost" id="showCurrentResultGames">DETALHAR ACERTOS POR JOGO</button></div><div id="resultGameDetails" class="hidden"></div>`;const bt=$('showCurrentResultGames');if(bt)bt.addEventListener('click',()=>{let target=$('resultGameDetails');target.classList.toggle('hidden');target.innerHTML=ROBOTS.map(b=>{let e=o.entries[b.id];if(!e)return'';return `<details><summary>${H(b.id)} — maior ${e.main.best}/15</summary><div class="spaced">${e.main.hits.map((h,i)=>`<span class="pill ${h>=11?'good':''}">J${i+1}: ${h}/15</span>`).join('')}</div></details>`}).join('')})}
+function renderAnalysis(cur){const o=cur.analysis;const label=cur.sourceMode==='demo'?'MODO MISTO — K1 HISTÓRICOS, CARTEIRAS EXPERIMENTAIS E DEMONSTRAÇÕES':'DADOS IMPORTADOS — ORIGEM EXTERNA';$('analysisBody').innerHTML=`<div class="notice ${cur.sourceMode==='demo'?'amber':'green'}">${cur.resultSource==='virtual'?'SORTEIO VIRTUAL INDEPENDENTE':'RESULTADO INFORMADO MANUALMENTE'} • Dezenas: <strong>${cur.result.map(pad).join(' ')}</strong>.<br>${label}. O controle aleatório tem o mesmo número de apostas e foi congelado antes da conferência. Nenhuma diferença isolada prova capacidade preditiva.</div><div class="grid-info"><div class="data"><div class="l">Melhor acerto</div><div class="v">${o.global.best}/15</div></div><div class="data"><div class="l">Jogos premiados</div><div class="v">${o.global.countPrize}</div></div><div class="data"><div class="l">Prêmios virtuais</div><div class="v smallv">${money(o.global.won)}</div></div><div class="data"><div class="l">ROI virtual</div><div class="v smallv ${o.global.roi>=0?'good':'bad'}">${scoreString(o.global)}</div></div></div><div class="notice">Faixas registradas: ${countsString(o.global)}. Gasto virtual ${money(o.global.spent)}. Controle aleatório: ${o.control.countPrize} jogo(s) premiado(s) • melhor ${o.control.best}/15 • ROI ${scoreString(o.control)}.<br>Carteiras: ${o.uniqueGames} combinações distintas e ${o.duplicateGames} ocorrência(s) repetida(s) entre sistemas.</div>${cur.analysis.max11K1?`<div class="notice green"><strong>MAX11.008 original K1 — contagem SEPARADA:</strong> ${cur.analysis.max11K1.hits[0]}/15 acertos no resultado ${cur.resultSource==='virtual'?'VIRTUAL':'informado'}; custo equivalente isolado ${money(cur.analysis.max11K1.spent)}; ROI ${scoreString(cur.analysis.max11K1)}. <strong>Não soma aos 99 jogos.</strong> Histórico C${cur.systems[MAX_ID].originalK1.concursoHistorico}. Esta comparação não valida previsão.</div>`:''}${cur.analysis.saldo60K1?`<div class="notice green"><strong>SALDO60 K9E6 original K1 — contagem SEPARADA:</strong> ${cur.analysis.saldo60K1.hits[0]}/15 acertos no resultado ${cur.resultSource==='virtual'?'VIRTUAL':'informado'}; custo isolado ${money(cur.analysis.saldo60K1.spent)}; ROI ${scoreString(cur.analysis.saldo60K1)}. <strong>Não soma aos 99 jogos. READINESS: REPROVADO 14/15.</strong> Histórico C${cur.systems[SALDO_ID].originalK1.concursoHistorico}.</div>`:''}${cur.systems?.[R1_ID]?.r1Decision?`<div class="notice amber"><strong>R1_STABLE_LEADER original — decisão SEPARADA:</strong> ${H(cur.systems[R1_ID].r1Decision.escolha)} (W20=${H(cur.systems[R1_ID].r1Decision.lider20)}; W50=${H(cur.systems[R1_ID].r1Decision.lider50)}). ${cur.analysis.r1K1?`K1 selecionado: ${cur.analysis.r1K1.hits[0]}/15 acertos virtuais, ROI isolado ${scoreString(cur.analysis.r1K1)}.`:'K0: sem bilhete, custo R$ 0,00, ROI não aplicável.'} Os ${cur.systems[R1_ID]?.games?.length||0} jogos do cartão são ${cur.analysis.r1K1?'extensão EXPERIMENTAL':'apenas DEMONSTRAÇÃO'}; NÃO medem a performance do R1. Stress confirmatório reprovado 9/10.</div>`:''}${cur.analysis.c3K1?`<div class="notice green"><strong>C3_OWN_SUPPORT original K1 — contagem SEPARADA:</strong> ${cur.analysis.c3K1.hits[0]}/15 acertos no resultado ${cur.resultSource==='virtual'?'VIRTUAL':'informado'}; custo isolado ${money(cur.analysis.c3K1.spent)}; ROI ${scoreString(cur.analysis.c3K1)}. <strong>Não soma aos 99 jogos. READINESS: REPROVADO 12/15.</strong> Histórico C${cur.systems[C3_ID].originalK1.concursoHistorico}.</div>`:''}<div class="table-wrap"><table class="table"><thead><tr><th>Sistema</th><th>Melhor</th><th>11+</th><th>12+</th><th>13+</th><th>14+</th><th>15</th><th class="money">Recebeu</th><th class="money">ROI rodada</th><th class="money">ROI acumulado</th></tr></thead><tbody>${ROBOTS.map(b=>{const e=o.entries[b.id];if(!e)return `<tr><td>${H(b.id)}</td><td colspan="9" class="muted">Abstenção ou sem fonte</td></tr>`;const a=e.main;const accum=roiAccumulated(b.id,cur);const cls=accum.roi===null?'':accum.roi>=0?'good':'bad';return `<tr><td><strong>${H(b.id)}</strong><div class="tiny muted">⚡ ${cur.systems[b.id]?.games?.length||0} jogos • 🧬 ${H(EVO_LABEL[cur.systems[b.id]?.evolutionChoice?.applied]||"Legado")}</div></td><td>${a.best}</td><td>${a.countPrize}</td><td>${a.count[12]+a.count[13]+a.count[14]+a.count[15]}</td><td>${a.count[13]+a.count[14]+a.count[15]}</td><td>${a.count[14]+a.count[15]}</td><td>${a.count[15]}</td><td class="money">${money(a.won)}</td><td class="money">${scoreString(a)}</td><td class="money ${cls}" title="${accum.originalCount} rodada(s) com K1 histórico e carteira derivada; ${accum.illustrativeCount} demonstrativa(s)">${accum.roi===null?'Pendente':pct(accum.roi)}<div class="tiny muted">${accum.n} rodada(s)</div></td></tr>`}).join('')}</tbody></table></div><div class="notice amber" style="margin-top:10px">ROI acumulado = (prêmios totais − custo total) ÷ custo total. Considera apenas rodadas concluídas do mesmo tipo de resultado (virtual ou informado), sem incluir K1 separado. Históricos demonstrativos e extensões T30.72 aparecem juntos: <strong>não são evidência de superioridade do algoritmo original.</strong> Consulte o número de rodadas e a origem de cada sistema.</div><div class="actions"><button class="btn ghost" id="showCurrentResultGames">DETALHAR ACERTOS POR JOGO</button></div><div id="resultGameDetails" class="hidden"></div>`;const bt=$('showCurrentResultGames');if(bt)bt.addEventListener('click',()=>{let target=$('resultGameDetails');target.classList.toggle('hidden');target.innerHTML=ROBOTS.map(b=>{let e=o.entries[b.id];if(!e)return'';return `<details><summary>${H(b.id)} — maior ${e.main.best}/15</summary><div class="spaced">${e.main.hits.map((h,i)=>`<span class="pill ${h>=11?'good':''}">J${i+1}: ${h}/15</span>`).join('')}</div></details>`}).join('')})}
 
 // RELATÓRIO COMPLETO: exporta somente rodadas concluídas e validadas.
 // O relatório contém histórico acumulado; não exporta resultados não conferidos.
@@ -304,9 +489,9 @@ function validHistoryRow(row){
  for(const b of ROBOTS){
   const pack=row.systems[b.id];if(!pack)return false;
   if(pack.abstain===true||pack.error){if(pack.games?.length)return false;continue}
-  if(!Array.isArray(pack.games)||pack.games.length!==11||pack.games.some(g=>!validNums(g,15)))return false;
-  if(!Array.isArray(pack.control)||pack.control.length!==11||pack.control.some(g=>!validNums(g,15)))return false;
-  const e=row.analysis.entries[b.id];if(!e?.main||!e.control||e.main.hits?.length!==11||e.control.hits?.length!==11)return false;
+  if(!Array.isArray(pack.games)||!ADAPT_SIZES.includes(pack.games.length)||pack.games.some(g=>!validNums(g,15)))return false;
+  if(!Array.isArray(pack.control)||pack.control.length!==pack.games.length||pack.control.some(g=>!validNums(g,15)))return false;
+  const e=row.analysis.entries[b.id];if(!e?.main||!e.control||e.main.hits?.length!==pack.games.length||e.control.hits?.length!==pack.games.length)return false;
  }
  return true;
 }
@@ -333,7 +518,9 @@ function reportSystem(row,bot){
   decisaoOriginalR1:p.r1Decision?{...p.r1Decision,analiseK1Separada:row.analysis.r1K1||null}:null,
   classeAlgoritmo:p.originalK1?(bot.id===R1_ID?'R1_ROUTER_K1_ORIGINAL_SELECIONADO_MAIS_11_EXPERIMENTAIS':bot.id===C3_ID?'C3_OWN_SUPPORT_K1_ORIGINAL_ELEGIVEL_COM_EXTENSAO_T30_72_EXPERIMENTAL':bot.id===SALDO_ID?'SALDO60_K9E6_K1_ORIGINAL_ELEGIVEL_COM_EXTENSAO_T30_72_EXPERIMENTAL':'MAX11_K1_ORIGINAL_HISTORICO_COM_EXTENSAO_T30_72_EXPERIMENTAL'):(p.r1Decision?.statusK0?'R1_ROUTER_K0_ORIGINAL_COM_11_DEMOS_NAO_CIENTIFICOS':row.mode==='demo'?'DEMONSTRATIVO':'IMPORTADO_NAO_AUTENTICADO'),
   bilheteOriginalK1:p.originalK1?{...p.originalK1,analiseSeparada:(bot.id===R1_ID?row.analysis.r1K1:bot.id===C3_ID?row.analysis.c3K1:bot.id===SALDO_ID?row.analysis.saldo60K1:row.analysis.max11K1)||null}:null,
-  metodoDeDistribuicao:p.originalK1?'T30_72_EXPERIMENTAL_SOBRE_RANKING_K1':(p.origin?.includes('RANKING')||p.origin?.includes('DEMONSTRAÇÃO')?'MATRIZ_T30_72':'JOGOS_PRONTOS_IMPORTADOS'),
+  eficienciaAdaptativa:p.adaptiveChoice?{...p.adaptiveChoice,quantidadeJogos:p.games.length,indicador:'COBERTURA_14_POR_JOGO_MAIS_ROI_CONTROLE'}:null,
+  evolucaoMatematica:p.evolutionChoice?{...p.evolutionChoice,originalK1Intacto:true}:null,
+  metodoDeDistribuicao:p.originalK1?'T30_72_BASE_EA_EVO_EXPERIMENTAL_SOBRE_RANKING_K1':(p.origin?.includes('RANKING')||p.origin?.includes('DEMONSTRAÇÃO')?'MATRIZ_T30_72':'JOGOS_PRONTOS_IMPORTADOS'),
   jogos:p.games.map((g,i)=>reportTicket(g,e.main.hits[i],row.payouts,i)),
   controle:p.control.map((g,i)=>reportTicket(g,e.control.hits[i],row.payouts,i)),
   analise:{carteira:e.main,controle:e.control}};
@@ -348,6 +535,12 @@ function reportRound(row){
   resultadoSorteado:row.result.slice(),precoPorJogo:row.price,
   rateios:row.payouts,analiseGeral:row.analysis.global,analiseControle:row.analysis.control,
   jogosDistintos:row.analysis.uniqueGames,ocorrenciasRepetidas:row.analysis.duplicateGames,
+  eficienciaAdaptativa:{versao:row.adaptiveVersion||null,cenariosVirtuaisCongeladosAntesDoSorteio:!!row.adaptiveResults,
+   diagnosticosPorRobô:row.adaptiveResults||null},
+  evolucaoMatematica:{versao:row.evolutionVersion||null,
+   tresEquacoesTestadas:!!row.evolutionResults,
+   avaliacaoCongeladaAntesDoSorteio:!!row.evolutionResults,
+   resultadosPorRobo:row.evolutionResults||null},
   sistemas:ROBOTS.map(bot=>reportSystem(row,bot))
  };
 }
@@ -380,20 +573,31 @@ function aggregateReport(rounds){
 function buildFullReport(){
  if(!reportReady())throw Error('Ainda não há histórico completo e válido para exportação.');
  const rounds=store.history.slice().sort((a,b)=>a.contest-b.contest).map(reportRound);
- return {schema:REPORT_SCHEMA,geradoEm:new Date().toISOString(),aplicativo:'LTF Market — Nova Fase V1.7',
+ return {schema:REPORT_SCHEMA,geradoEm:new Date().toISOString(),aplicativo:'LTF Market — Nova Fase V1.9',
   versaoArmazenamento:VERSION,moeda:'BRL',tipo:'RELATORIO_HISTORICO_COMPLETO',
-  avisoCientifico:'MAX11.008 K1 original até C3784; SALDO60 K9E6 K1 e C3_OWN_SUPPORT K1 apenas em concursos terminados em 1, com status REAL-READINESS REPROVADO 14/15 e 12/15 respectivamente. As carteiras T30.72 de 11 jogos dos três são extensões EXPERIMENTAIS; fora da elegibilidade, C3 e SALDO são DEMONSTRATIVOS. R1_STABLE_LEADER apenas em W10 C601..C3751, como seletor MAX/SALDO/K0 com stress FAIL 9/10; K0 não custa nem gera K1. Seus 11 jogos, quando mostrados em K0, são DEMONSTRATIVOS. Os outros cinco sistemas continuam demonstrativos. ROI acumulado não equivale a ROI científico dos K1. Sorteios virtuais independentes não comprovam previsão. Nenhum dinheiro real.',
+  avisoCientifico:'Equacoes EV_V1_9 sao novas hipoteses experimentais sobre resultados VIRTUAIS anteriores e nao possuem validacao historica independente. MAX11.008 K1 original até C3784; SALDO60 K9E6 K1 e C3_OWN_SUPPORT K1 apenas em concursos terminados em 1, com status REAL-READINESS REPROVADO 14/15 e 12/15 respectivamente. As carteiras de 6/11/22/44/88 jogos são extensões EXPERIMENTAIS, iniciadas com a matriz T30.72 de 11 jogos; fora da elegibilidade, C3 e SALDO são DEMONSTRATIVOS. R1_STABLE_LEADER apenas em W10 C601..C3751, como seletor MAX/SALDO/K0 com stress FAIL 9/10; K0 não custa nem gera K1. Sua carteira virtual, quando mostrada em K0, é DEMONSTRATIVA. Os outros cinco sistemas continuam demonstrativos. ROI acumulado não equivale a ROI científico dos K1. Sorteios virtuais independentes não comprovam previsão. Nenhum dinheiro real.',
   integridade:{registrosConferidos:rounds.length,concursoUnico:true,resultado15DezenasDistintas:true,
     congelamentoAnteriorAoResultado:'Declarado pelos registros locais; não equivale a certificação independente',
     origemAlgoritmos:'MAX11.008, SALDO60 K9E6 e C3_OWN_SUPPORT K1 reconstruídos sobre histórico real até C3783. C3 e SALDO só operam no W10 (target%10==1), reprovados no REAL-READINESS 12/15 e 14/15. Matrizes T30.72 experimentais; outros cinco algoritmos não integrados; R1 router histórico apenas W10, stress FAIL 9/10.',
     impressaoDigital:'Identificador FNV-1a 32 bits para erros acidentais; NÃO prova criptográfica',
     rateiosFaltantesPossiveis:true},
-  metodologia:{nome:'T30.72 — Matriz balanceada 11x15',posicoesPorJogo:MATRIX.map(r=>r.slice()),
-   quantidadeJogos:11,intersecaoParAPAr:'8–9 posições',
+  metodologia:{nome:'Eficiência Adaptativa: 6/11/22/44/88; matriz T30.72 como base',posicoesPorJogo:MATRIX.map(r=>r.slice()),
+   quantidadeJogos:'VARIAVEL_POR_ROBO',quantidadesCandidatas:ADAPT_SIZES.slice(),ciclo:ADAPT_CYCLE,
+   regra:'Ciclo de cinco rodadas com cenários virtuais congelados: índice de cobertura14+ por jogo, ROI contra controle e alcance absoluto, com penalidade moderada de custo.',
+   intersecaoParAPAr:'8–9 posições apenas na matriz base de 11 jogos',
    nota:'Mapeamento de ranking fornecido ou ilustrativo. Importações com jogos prontos podem usar metodologia diferente; verificar origem individual.',
-   controle:'Carteira de 11 jogos aleatórios congelada por sistema; referência de igual custo, sem prova preditiva.'},
-  referenciasRobos:ROBOTS.map(x=>({...x,algoritmoOriginalIntegradoNoHTML:(x.id===MAX_ID&&!!window.MAX11_008)||(x.id===SALDO_ID&&!!window.SALDO60_K9E6)||(x.id===C3_ID&&!!window.C3_OWN_SUPPORT),
+   controle:'Carteira com o MESMO número de jogos da carteira ativa; cinco tamanhos virtuais congelados antes do sorteio. Sem prova preditiva.'},
+  referenciasRobos:ROBOTS.map(x=>({...x,algoritmoOriginalIntegradoNoHTML:(x.id===MAX_ID&&!!window.MAX11_008)||(x.id===SALDO_ID&&!!window.SALDO60_K9E6)||(x.id===C3_ID&&!!window.C3_OWN_SUPPORT)||(x.id===R1_ID&&!!window.R1_STABLE_LEADER),
    escopoOriginal:x.id===MAX_ID?'K1_HISTORICO_101_3784;_T30_72_EXPERIMENTAL':x.id===SALDO_ID?'K1_HISTORICO_SOMENTE_TARGET_MOD10_1_ATE_3781;_REAL_READINESS_REPROVADO_14_15;_T30_72_EXPERIMENTAL':x.id===R1_ID?'ROTEADOR_HISTORICO_K1_OU_K0_601_3751_MOD10_1;_FAIL_STRESS_9_10;_11_T30_72_EXPERIMENTAL_OU_DEMO_K0':x.id===C3_ID?'K1_HISTORICO_TARGET_MOD10_1_1001_3781;_REAL_READINESS_REPROVADO_12_15;_T30_72_EXPERIMENTAL':'NAO_INTEGRADO'})),
+  evolucaoMatematica:{versao:EVO_VERSION,ciclo:EVO_CYCLE,liberacaoFamiliaXP:EVO_XP_ROUNDS,
+   equacoes:{refino:'0.75 * ranking + 0.25 * frequencia ultimas 5',
+    variacao:'0.60 * ranking + 0.25 * ausencia ultimas 5 + 0.15 * frequencia ultimas 10',
+    familia:'0.40 * ranking + 0.35 * contraste janelas + 0.25 * ausencia ultimas 10'},
+   regra:'Uma variante pode alterar apenas a carteira experimental após superar a base em dois ciclos de cinco rodadas e com ganho agregado >=1 ponto percentual de ROI; familia somente apos XP. Sem mexer em K1/K0 original.',
+   proximaRodada:Object.fromEntries(ROBOTS.map(b=>[b.id,evolutionDecision(b.id,store.roundMode)]))},
+  eficienciaAdaptativa:{versao:ADAPT_VERSION,ciclo:ADAPT_CYCLE,tamanhos:ADAPT_SIZES.slice(),
+   observacao:'Ajustes e variantes EV_V1_9 valem só para carteiras virtuais EXPERIMENTAIS; não alteram K1/K0 originais. Índice não demonstra previsão.',
+   proximaRodada:Object.fromEntries(ROBOTS.map(b=>[b.id,adaptiveChoice(b.id,store.roundMode)]))},
   resumo:aggregateReport(rounds),rodadas:rounds};
 }
 function exportFullReport(){
