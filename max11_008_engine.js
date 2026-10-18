@@ -48,5 +48,5 @@
  const fixture=[25,10,9,11,20,5,7,13,3,17,15,18,1,4,19];
  const test=generate(3784);
  if(test.ticket.some((n,i)=>n!==fixture[i]))throw Error("MAX11.008: falha crítica no fixture 3784.");
- root.MAX11_008=Object.freeze({generate,historyEnd:maxHistory,verifiedFixture:3784,integrity:"15/15"});
+ root.MAX11_008=Object.freeze({generate,historyMask:function(t){if(!Number.isSafeInteger(t)||t<1||t>maxHistory)throw Error("MAX11.008: historico indisponivel");return masks[t];},historyEnd:maxHistory,verifiedFixture:3784,integrity:"15/15"});
 })(typeof window!=="undefined"?window:globalThis);
