@@ -128,7 +128,7 @@ function prng(seed){let a=seed>>>0;return()=>{a+=0x6D2B79F5;let t=a;t=Math.imul(
 function demoRank(contest,id){const rng=prng(fHash(`LTF_VISUAL_DEMO|${contest}|${id}|V1`));let n=Array.from({length:25},(_,i)=>i+1);for(let i=24;i>0;i--){const j=Math.floor(rng()*(i+1));[n[i],n[j]]=[n[j],n[i]]}return n}
 // 🧪 H10 usa exclusivamente resultados passados do mesmo modo e congela a equação por 4 rodadas.
 function h10Completed(mode){const source=mode==='real'?'manual':'virtual';return store.history.filter(r=>r.status==='revealed'&&r.resultSource===source&&r.systems?.[CHALLENGER_ID]?.challengerMeta).sort((a,b)=>a.contest-b.contest);}
-function h10Plan(contest,mode){if(!window.LTF_H10_V1)throw Error('Motor H10 ausente.');return {...window.LTF_H10_V1.plan(h10Completed(mode).length),firstContest:contest};}
+function h10Plan(contest,mode){if(!window.LTF_H10_V1)throw Error('Motor H10 ausente.');const done=h10Completed(mode),idea=window.LTF_H10_V1.plan(done.length),existing=done.find(x=>x.systems?.[CHALLENGER_ID]?.challengerMeta?.id===idea.id);return {...idea,firstContest:existing?existing.contest:contest};}
 function h10Generate(contest,mode,plan){if(!window.LTF_H10_V1)throw Error('Motor H10 não carregado.');const hist=store.history.filter(r=>r.status==='revealed'&&r.resultSource===(mode==='real'?'manual':'virtual')&&r.contest<contest&&validNums(r.result,15)).sort((a,b)=>b.contest-a.contest).slice(0,8);return {...window.LTF_H10_V1.generate(plan,hist.map(r=>r.result)),usedContests:hist.map(r=>r.contest)};}
 const mapping=rank=>MATRIX.map(row=>row.map(pos=>rank[pos-1]).sort((a,b)=>a-b));
 const randomControl=(contest,id)=>mapping(demoRank(contest,`CONTROLE:${id}`));
