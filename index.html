@@ -619,7 +619,7 @@ function reportSystem(row,bot){
   bilheteOriginalK1:p.originalK1?{...p.originalK1,analiseSeparada:(bot.id===R1_ID?row.analysis.r1K1:bot.id===C3_ID?row.analysis.c3K1:bot.id===SALDO_ID?row.analysis.saldo60K1:bot.id===RMRR_ID?row.analysis.rmrrK1:bot.id===RETIRED_BOT_ID?row.analysis.botK1:row.analysis.max11K1)||null}:null,
   eficienciaAdaptativa:p.adaptiveChoice?{...p.adaptiveChoice,quantidadeJogos:p.games.length,indicador:'COBERTURA_14_POR_JOGO_MAIS_ROI_CONTROLE'}:null,
   evolucaoMatematica:p.evolutionChoice?{...p.evolutionChoice,originalK1Intacto:true}:null,
-  metodoDeDistribuicao:p.originalK1?'T30_72_BASE_EA_EVO_EXPERIMENTAL_SOBRE_RANKING_K1':(p.origin?.includes('RANKING')||p.origin?.startsWith('RMRR1 V1')||p.origin?.includes('DEMONSTRAÇÃO')?'MATRIZ_T30_72':'JOGOS_PRONTOS_IMPORTADOS'),
+  metodoDeDistribuicao:bot.id===CHALLENGER_ID?'H10_GERACAO_INTERNA_MATRIZ_T30_72':p.originalK1?'T30_72_BASE_EA_EVO_EXPERIMENTAL_SOBRE_RANKING_K1':(p.origin?.includes('RANKING')||p.origin?.startsWith('RMRR1 V1')||p.origin?.includes('DEMONSTRAÇÃO')?'MATRIZ_T30_72':'JOGOS_PRONTOS_IMPORTADOS'),
   jogos:p.games.map((g,i)=>reportTicket(g,e.main.hits[i],row.payouts,i)),
   controle:p.control.map((g,i)=>reportTicket(g,e.control.hits[i],row.payouts,i)),
   analise:{carteira:e.main,controle:e.control}};
