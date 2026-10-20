@@ -24,36 +24,36 @@ function optimize(parts,seed,c13){
  const b14=coverage14(all),b13=c13.coverage(all),counts=new Map(),used=new Set(all.map(key));
  for(const g of all)neigh(g,m=>counts.set(m,(counts.get(m)||0)+1));
  const r=rng('LTF|COB14|'+seed),attempted=new Set();
- let checks=0,acceptedMoves=0,current13=b13;const MAX_CHECKS=24,MAX_MOVES=10;
- while(checks<MAX_CHECKS&&acceptedMoves<MAX_MOVES){
-  const options=[];
-  for(const ix of mutable){
-   const old=all[ix],oldSet=new Set();neigh(old,m=>oldSet.add(m));
-   const lost=[...oldSet].filter(m=>counts.get(m)===1).length;
-   for(let z=0;z<5;z++){
-    const next=variant(old,r),k=key(next),pair=ix+'|'+k;
-    if(used.has(k)||attempted.has(pair))continue;
-    let gain=0;neigh(next,m=>{if(!counts.has(m)||(oldSet.has(m)&&counts.get(m)===1))gain++;});
-    const delta=gain-lost;
-    if(delta>0)options.push({ix,next,k,delta,pair});
-   }
+ // Gera as opcoes uma vez; recalcula o ganho marginal ao aplicar cada troca.
+ // Reduz o tempo de tela congelada em tablets sem enfraquecer a verificacao exata.
+ let checks=0,acceptedMoves=0,current13=b13;const MAX_CHECKS=24,MAX_MOVES=10,options=[];
+ for(const ix of mutable){
+  const old=all[ix],oldSet=new Set();neigh(old,m=>oldSet.add(m));
+  const lost=[...oldSet].filter(m=>counts.get(m)===1).length;
+  for(let z=0;z<5;z++){
+   const next=variant(old,r),k=key(next),pair=ix+'|'+k;
+   if(used.has(k)||attempted.has(pair))continue;
+   let gain=0;neigh(next,m=>{if(!counts.has(m)||(oldSet.has(m)&&counts.get(m)===1))gain++;});
+   const delta=gain-lost;
+   if(delta>0)options.push({ix,next,k,delta,pair});
   }
-  options.sort((a,b)=>b.delta-a.delta||a.ix-b.ix||a.k.localeCompare(b.k));
-  if(!options.length)break;
-  let progressed=false;
-  for(const opt of options){
-   if(checks>=MAX_CHECKS)break;
-   if(attempted.has(opt.pair))continue;
-   attempted.add(opt.pair);checks++;
-   const old=all[opt.ix];all[opt.ix]=opt.next;
-   const after13=c13.coverage(all);
-   if(after13<current13){all[opt.ix]=old;continue;}
-   neigh(old,m=>{const count=counts.get(m);if(count===1)counts.delete(m);else counts.set(m,count-1);});
-   neigh(opt.next,m=>counts.set(m,(counts.get(m)||0)+1));
-   used.delete(key(old));used.add(opt.k);current13=after13;
-   acceptedMoves++;progressed=true;break;
-  }
-  if(!progressed)break;
+ }
+ options.sort((a,b)=>b.delta-a.delta||a.ix-b.ix||a.k.localeCompare(b.k));
+ const changed=new Set();
+ for(const opt of options){
+  if(checks>=MAX_CHECKS||acceptedMoves>=MAX_MOVES)break;
+  if(changed.has(opt.ix)||used.has(opt.k)||attempted.has(opt.pair))continue;
+  const old=all[opt.ix],oldMasks=new Set();neigh(old,m=>oldMasks.add(m));
+  const lost=[...oldMasks].filter(m=>counts.get(m)===1).length;
+  let gain=0;neigh(opt.next,m=>{if(!counts.has(m)||(oldMasks.has(m)&&counts.get(m)===1))gain++;});
+  if(gain-lost<=0)continue;
+  attempted.add(opt.pair);checks++;all[opt.ix]=opt.next;
+  const after13=c13.coverage(all);
+  if(after13<current13){all[opt.ix]=old;continue;}
+  neigh(old,m=>{const n=counts.get(m);if(n===1)counts.delete(m);else counts.set(m,n-1);});
+  neigh(opt.next,m=>counts.set(m,(counts.get(m)||0)+1));
+  used.delete(key(old));used.add(opt.k);current13=after13;
+  acceptedMoves++;changed.add(opt.ix);
  }
  const candidate14=counts.size,candidate13=current13,won=candidate14>b14&&candidate13>=b13;
  const final=won?all:original;
