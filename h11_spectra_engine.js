@@ -26,7 +26,8 @@ function features(past){
  }
  // Grafo de transição causal: presença anterior → presença posterior
  for(let t=0;t<h.length-1;t++){const w=Math.pow(.86,t);
-  for(const n of h[t])for(const p of h[t+1]){
+  // Condiciona a transição ao último sorteio conhecido; arco causal antigo -> recente.
+  for(const n of h[t+1])if(h[0].includes(n))for(const p of h[t]){
    const circular=Math.min((n-p+25)%25,(p-n+25)%25);
    f[2][p]+=w*(1/(1+circular))/15;
   }
