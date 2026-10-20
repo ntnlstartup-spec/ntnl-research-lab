@@ -76,7 +76,7 @@
 <script src="./r1_stable_leader_engine.js"></script>
 <script src="./h10_rotating_engine.js?v=h10v1"></script>
 <script src="./cob13_coverage_engine.js?v=cob13v1"></script>
-<script src="./cob14_shadow_engine.js?v=cob14v1"></script>
+<script src="./cob14_shadow_engine.js?v=cob14v1-16b"></script>
 <script>
 (()=>{'use strict';
 // APLICATIVO INDEPENDENTE. NUNCA altera o banco/keys do HTML histórico.
@@ -672,7 +672,6 @@ function cob14Assess(cur,result,payout,resultSource){
  const f=cur.cob14ShadowFrozen;if(!f||cur.contest<COB14_SHADOW_START)return null;
  const e=window.LTF_COB14_V1,c13=window.LTF_COB13_V1;if(!e||!c13)throw Error('COB14: motor de auditoria ausente.');
  const active=Object.values(cur.systems).flatMap(p=>p.games||[]),n=active.length;
- const controlOptimized=Object.values(cur.systems).flatMap((p,i)=>[]);
  const control13=rowRoster(cur).filter(b=>cur.systems[b.id]?.games).flatMap(b=>
   cur.cob13ShadowFrozen?.[b.id]?.optimizedControlGames||cur.systems[b.id].control);
  if(f.generatedFor!==cur.contest||f.mainGames.length!==n||f.controlGames.length!==n||control13.length!==n)
