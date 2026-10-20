@@ -26,7 +26,8 @@ function optimize(parts,seed,geo13,geo14){
  const old=baseline.flat(),n=old.length;
  const baseline13=geo13.coverage(old),baseline14=geo14.coverage14(old);
  const movable=[];baseline.forEach((gs,p)=>{if(gs.length===88)for(let i=11;i<88;i++)movable.push({p,i});});
- const origDistinct=new Set(old.map(key)).size;
+ const origKeys=new Map();for(const g of old){const k=key(g);origKeys.set(k,(origKeys.get(k)||0)+1);}
+ const origDistinct=origKeys.size;
  let chosen=baseline,score13=baseline13,score14=baseline14,selectedRestart=-1,changed=0,trialCount=0;
  for(let restart=0;restart<2;restart++){
   const gs=baseline.map(group=>group.map(g=>g.slice())),r=rand('COB-MAX|'+seed+'|'+restart);
@@ -40,13 +41,14 @@ function optimize(parts,seed,geo13,geo14){
   function gain(g){let a=0,b=0;visit(g,13,m=>{if(!counts13[m])a++;});visit(g,14,m=>{if(!counts14[m])b++;});return[a,b];}
   for(const g of gs.flat())add(g);
   if(covers13!==baseline13||covers14!==baseline14)throw Error('COB-MAX: divergencia cobertura inicial');
-  const order=movable.map(v=>{let overlaps=0;visit(gs[v.p][v.i],13,m=>{if(counts13[m]>1)overlaps++;});return{...v,overlaps};})
-    .sort((a,b)=>b.overlaps-a.overlaps||a.p-b.p||a.i-b.i);
+  const order=movable.map(v=>{let overlaps=0;visit(gs[v.p][v.i],13,m=>{if(counts13[m]>1)overlaps++;});
+    return{...v,overlaps,duplicate:(origKeys.get(key(gs[v.p][v.i]))||0)>1?1:0};})
+    .sort((a,b)=>b.duplicate-a.duplicate||b.overlaps-a.overlaps||a.p-b.p||a.i-b.i);
   const recent=[],seenPos=new Map();let changes=0,tries=0;
-  const steps=Math.min(84,order.length),pool=Math.min(190,order.length);
+  const steps=Math.min(64,order.length),pool=Math.min(160,order.length);
   for(let t=0;t<steps;t++){
    if(!pool)break;
-   let pick=(restart*31+t*2+Math.floor(r()*31))%pool;
+   let pick=t<16?t:(restart*31+t*2+Math.floor(r()*31))%pool;
    let v=order[pick],pos=v.p+':'+v.i;
    if(t-(seenPos.get(pos)??-1000)<12)continue;
    seenPos.set(pos,t);
@@ -54,7 +56,7 @@ function optimize(parts,seed,geo13,geo14){
    remove(oldGame);
    const [restore13,restore14]=gain(oldGame),was13=covers13+restore13,was14=covers14+restore14;
    let winner=null,winnerKey='',top13=was13,top14=was14;
-   for(let z=0;z<9;z++){
+   for(let z=0;z<8;z++){
     let candidate;
     if(z<=2)candidate=change(oldGame,r,z+1);
     else if(z<=5)candidate=change(oldGame,r,z-2);
@@ -92,6 +94,7 @@ function optimize(parts,seed,geo13,geo14){
  return{parts:chosen,metrics:{version:V,numberOfGames:n,mutableGames:movable.length,
   restarts:2,selectedRestart,tabuMemory:36,candidatesTested:trialCount,modifiedGames:changed,
   originalDistinct:origDistinct,finalDistinct:new Set(final.map(key)).size,
+  duplicateTicketsEliminated:new Set(final.map(key)).size-origDistinct,
   original13:baseline13,final13:score13,original14:baseline14,final14:score14,
   gain13:score13-baseline13,gain14:score14-baseline14,
   percent13Before:100*baseline13/TOTAL,percent13After:100*score13/TOTAL,
