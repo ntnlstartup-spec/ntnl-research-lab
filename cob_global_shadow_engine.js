@@ -28,12 +28,12 @@ function optimize(parts,seed,geo13,geo14){
  const order=mutable.map(v=>{let overlap=0;visit(groups[v.p][v.i],13,m=>{if(c13[m]>1)overlap++});return {...v,overlap}})
   .sort((a,b)=>b.overlap-a.overlap||a.p-b.p||a.i-b.i);
  let changed=0,attempts=0;
- for(let cycle=0;cycle<2;cycle++)for(let x=0;x<Math.min(200,order.length);x++){
+ for(let cycle=0;cycle<2;cycle++)for(let x=0;x<Math.min(120,order.length);x++){
   const {p,i}=order[(x+cycle*29)%order.length],prev=groups[p][i],prevKey=key(prev);
   keys.delete(prevKey);remove(prev);
   const [back13,back14]=gain(prev),was13=n13+back13,was14=n14+back14;
   let chosen=null,chosenKey='',best13=was13,best14=was14;
-  for(let t=0;t<10;t++){const g=variant(prev,rng,t%4===0),k=key(g);if(k===prevKey||keys.has(k))continue;
+  for(let t=0;t<7;t++){const g=variant(prev,rng,t%4===0),k=key(g);if(k===prevKey||keys.has(k))continue;
    attempts++;const [add13,add14]=gain(g),a=n13+add13,b=n14+add14;
    if(a<=was13||b<was14)continue;
    if(a>best13||(a===best13&&b>best14)||(a===best13&&b===best14&&k<chosenKey)){
